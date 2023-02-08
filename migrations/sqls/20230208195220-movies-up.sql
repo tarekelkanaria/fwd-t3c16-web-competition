@@ -1,0 +1,1 @@
+CREATE TABLE movies(id SERIAL PRIMARY KEY, name VARCHAR(150), release_date date);

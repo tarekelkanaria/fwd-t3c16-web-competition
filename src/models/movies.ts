@@ -1,7 +1,7 @@
 import client from "../database";
 
 export type Movie = {
-  id?: number;
+  id?: number | string;
   name: string;
   release_date: Date;
 };

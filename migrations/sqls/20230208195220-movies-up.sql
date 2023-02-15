@@ -1,1 +1,1 @@
-CREATE TABLE movies(id SERIAL PRIMARY KEY, name VARCHAR(150), release_date date);
+CREATE TABLE movies(id SERIAL PRIMARY KEY, name VARCHAR(150) NOT NULL, release_date date default NOW() NOT NULL);

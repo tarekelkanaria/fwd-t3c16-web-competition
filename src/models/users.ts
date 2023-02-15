@@ -1,5 +1,4 @@
 import client from '../database';
-import { Movie } from './movies';
 
 export type User = {
     id?: number;
@@ -20,7 +19,7 @@ export class StreamUser {
         }
     }
     
-    async show(id:User): Promise<User>{
+    async show(id:number): Promise<User>{
         try {
             await client.connect();
         const result = await client.query('SELECT * FROM users WHERE id=($1)', [id]);
@@ -39,7 +38,7 @@ export class StreamUser {
             throw new Error(`could not add user ${u.name}, Error: ${error}`);
         }
     }
-    async delete(id: User): Promise<User> { 
+    async delete(id: number): Promise<User> { 
         try {
             await client.connect();
             const result = await client.query('DELETE FROM users WHERE id=($1)', [id]);
